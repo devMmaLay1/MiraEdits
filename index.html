@@ -1,0 +1,891 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="MiraEdits - Professional Video Editing Portfolio by Miracle. Cut. Edit. Wow.">
+    <title>MiraEdits - Video Editing Portfolio</title>
+
+    <!-- Performance Optimization: Preload Critical Assets -->
+    <!-- DNS Prefetch for External Resources -->
+    <link rel="dns-prefetch" href="//fonts.googleapis.com">
+    <link rel="dns-prefetch" href="//fonts.gstatic.com">
+    <link rel="dns-prefetch" href="//cdnjs.cloudflare.com">
+    <link rel="dns-prefetch" href="//cdn.tailwindcss.com">
+    
+    <!-- Preconnect for Critical External Resources -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Preload Critical CSS -->
+    <link rel="preload" href="css/style.css" as="style">
+    
+    <!-- Preload Critical Fonts -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&family=Montserrat:wght@400;700;900&display=swap" as="style">
+    
+    <!-- Preload Hero Background Images (Critical for LCP) -->
+    <link rel="preload" href="assets/images/freepik-1.webp" as="image">
+    <link rel="preload" href="assets/images/freepik-2.webp" as="image">
+    
+    <!-- Preload Critical JavaScript -->
+    <link rel="modulepreload" href="js/main.js">
+
+    <!-- Google Fonts - Optimized for mobile -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&family=Montserrat:wght@400;700;900&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/video-modal.css">
+    <link rel="stylesheet" href="css/buttons.css">
+</head>
+
+<body>
+    <!-- Fixed Header with Mobile-First Navigation -->
+    <header class="header" id="header">
+        <nav class="nav container">
+            <!-- Mobile-Optimized Brand Logo -->
+            <div class="nav__brand">
+                <a href="#home" class="nav__logo brand-title">MiraEdits</a>
+            </div>
+
+            <!-- Mobile Navigation Menu -->
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list">
+                    <li class="nav__item">
+                        <a href="#home" class="nav__link touch-target">Home</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#about" class="nav__link touch-target">About</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#work" class="nav__link touch-target">Work</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#services" class="nav__link touch-target">Services</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#contact" class="nav__link touch-target">Contact</a>
+                    </li>
+                </ul>
+
+                <!-- Mobile Menu Close Button -->
+                <div class="nav__close touch-target" id="nav-close">
+                    <i class="fas fa-times"></i>
+                </div>
+            </div>
+
+            <!-- Mobile Hamburger Toggle -->
+            <div class="nav__toggle touch-target" id="nav-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Dark Mode Toggle Button -->
+    <button class="theme-toggle touch-target" id="theme-toggle" aria-label="Toggle dark mode">
+        <i class="fas fa-moon" id="theme-icon"></i>
+    </button>
+
+    <!-- Main Content -->
+    <main class="main">
+        <!-- Hero Section -->
+        <section class="hero section" id="home" aria-label="Hero Section">
+            <!-- Hero Background Grid -->
+            <div class="hero__background">
+                <div class="hero__background-item">
+                    <img srcset="assets/images/freepik-1-400.webp 400w,
+                                 assets/images/freepik-1-800.webp 800w,
+                                 assets/images/freepik-1.webp 1200w"
+                         sizes="(max-width: 480px) 400px,
+                                (max-width: 768px) 800px,
+                                1200px"
+                         src="assets/images/freepik-1.webp" 
+                         alt="Creative background 1" 
+                         loading="eager"
+                         fetchpriority="high">
+                </div>
+                <div class="hero__background-item">
+                    <img srcset="assets/images/freepik-2-400.webp 400w,
+                                 assets/images/freepik-2-800.webp 800w,
+                                 assets/images/freepik-2.webp 1200w"
+                         sizes="(max-width: 480px) 400px,
+                                (max-width: 768px) 800px,
+                                1200px"
+                         src="assets/images/freepik-2.webp" 
+                         alt="Creative background 2" 
+                         loading="eager"
+                         fetchpriority="high">
+                </div>
+                <div class="hero__background-item">
+                    <img srcset="assets/images/freepik-3-400.webp 400w,
+                                 assets/images/freepik-3-800.webp 800w,
+                                 assets/images/freepik-3.webp 1200w"
+                         sizes="(max-width: 480px) 400px,
+                                (max-width: 768px) 800px,
+                                1200px"
+                         src="assets/images/freepik-3.webp" 
+                         alt="Creative background 3" 
+                         loading="eager">
+                </div>
+                <div class="hero__background-item">
+                    <img srcset="assets/images/freepik-4-400.webp 400w,
+                                 assets/images/freepik-4-800.webp 800w,
+                                 assets/images/freepik-4.webp 1200w"
+                         sizes="(max-width: 480px) 400px,
+                                (max-width: 768px) 800px,
+                                1200px"
+                         src="assets/images/freepik-4.webp" 
+                         alt="Creative background 4" 
+                         loading="eager">
+                </div>
+            </div>
+            
+            <!-- Very Dark Overlay -->
+            <div class="hero__overlay"></div>
+            
+            <!-- Hero Content -->
+            <div class="hero__container container">
+                <div class="hero__content">
+                    <!-- Main Branding -->
+                    <h1 class="hero__title brand-title">MiraEdits</h1>
+                    <p class="hero__slogan brand-slogan">CUT. EDIT. WOW.</p>
+                    <p class="hero__description">Professional video editing that transforms your vision into stunning
+                        visual stories</p>
+
+                    <!-- Call to Action -->
+                    <div class="hero__actions">
+                        <a href="#work" class="btn-primary btn-large">
+                            <i class="fas fa-play"></i>
+                            View My Work
+                        </a>
+                        <a href="#contact" class="btn-secondary">
+                            <i class="fas fa-envelope"></i>
+                            Get In Touch
+                        </a>
+                    </div>
+
+                    <!-- Skills Preview -->
+                    <div class="hero__skills">
+                        <div class="hero__skill">
+                            <i class="fas fa-cut"></i>
+                            <span>Video Editing</span>
+                        </div>
+                        <div class="hero__skill">
+                            <i class="fas fa-palette"></i>
+                            <span>Color Grading</span>
+                        </div>
+                        <div class="hero__skill">
+                            <i class="fas fa-magic"></i>
+                            <span>Motion Graphics</span>
+                        </div>
+                        <div class="hero__skill">
+                            <i class="fas fa-volume-up"></i>
+                            <span>Sound Design</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Scroll Indicator -->
+                <div class="hero__scroll">
+                    <div class="hero__scroll-indicator">
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <span class="hero__scroll-text">Scroll to explore</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section class="about section" id="about">
+            <div class="about__container container">
+                <div class="about__content">
+                    <!-- Section Header -->
+                    <div class="about__header">
+                        <h2 class="section__title about__title">About Me</h2>
+                        <p class="about__subtitle">Bringing Ideas to Life Through Creative Video Editing</p>
+                    </div>
+
+                    <!-- Main Content Grid -->
+                    <div class="about__grid">
+                        <!-- Profile Section -->
+                        <div class="about__profile">
+                            <div class="about__avatar">
+                                <div class="about__avatar-wrapper">
+                                    <img src="assets/images/mmaAnime1.png" 
+                                         alt="Miracle - Professional Video Editor"
+                                         class="about__avatar-img" 
+                                         width="120" 
+                                         height="120"
+                                         loading="lazy">
+                                </div>
+                            </div>
+                            <div class="about__intro">
+                                <h3 class="about__name">Hi, I'm Miracle</h3>
+                                <p class="about__description">
+                                    I bring ideas to life through creative video editing. I specialize in motion
+                                    graphics, color grading, and storytelling that captivates audiences and delivers
+                                    powerful messages.
+                                </p>
+                                <p class="about__passion">
+                                    With a passion for visual storytelling and technical excellence, I transform raw
+                                    footage into compelling narratives that engage viewers and drive results.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Skills Section -->
+                        <div class="about__skills">
+                            <h3 class="about__skills-title">Core Skills</h3>
+                            <div class="about__skills-grid">
+                                <div class="about__skill-item">
+                                    <div class="about__skill-icon">
+                                        <i class="fas fa-cut"></i>
+                                    </div>
+                                    <div class="about__skill-content">
+                                        <h4 class="about__skill-name">Video Editing</h4>
+                                        <p class="about__skill-description">Professional editing with seamless cuts,
+                                            transitions, and pacing</p>
+                                    </div>
+                                </div>
+
+                                <div class="about__skill-item">
+                                    <div class="about__skill-icon">
+                                        <i class="fas fa-palette"></i>
+                                    </div>
+                                    <div class="about__skill-content">
+                                        <h4 class="about__skill-name">Color Grading</h4>
+                                        <p class="about__skill-description">Cinematic color correction and mood
+                                            enhancement</p>
+                                    </div>
+                                </div>
+
+                                <div class="about__skill-item">
+                                    <div class="about__skill-icon">
+                                        <i class="fas fa-magic"></i>
+                                    </div>
+                                    <div class="about__skill-content">
+                                        <h4 class="about__skill-name">Motion Graphics</h4>
+                                        <p class="about__skill-description">Dynamic animations and visual effects</p>
+                                    </div>
+                                </div>
+
+                                <div class="about__skill-item">
+                                    <div class="about__skill-icon">
+                                        <i class="fas fa-volume-up"></i>
+                                    </div>
+                                    <div class="about__skill-content">
+                                        <h4 class="about__skill-name">Sound Design</h4>
+                                        <p class="about__skill-description">Audio enhancement and synchronization</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Tools Section -->
+                        <div class="about__tools">
+                            <h3 class="about__tools-title">Professional Tools</h3>
+                            <div class="about__tools-grid">
+                                <div class="about__tool-item">
+                                    <div class="about__tool-icon">
+                                        <img src="assets/images/adobe-logo.svg" alt="Adobe Premiere Pro icon"
+                                            class="tool-icon">
+                                    </div>
+                                    <span class="about__tool-name">Adobe Premiere Pro</span>
+                                </div>
+
+                                <div class="about__tool-item">
+                                    <div class="about__tool-icon">
+                                        <img src="assets/images/adobe-after-effects-Download-Adobe-After-Effects.jpg"
+                                            alt="After Effects icon" class="tool-icon">
+                                    </div>
+                                    <span class="about__tool-name">After Effects</span>
+                                </div>
+
+                                <div class="about__tool-item">
+                                    <div class="about__tool-icon">
+                                        <img src="assets/images/DaVinci Resolve.webp" alt="DaVinci Resolve icon"
+                                            class="tool-icon">
+                                    </div>
+                                    <span class="about__tool-name">DaVinci Resolve</span>
+                                </div>
+
+                                <div class="about__tool-item">
+                                    <div class="about__tool-icon">
+                                        <img src="assets/images/Cinema 4D.webp" alt="Cinema 4D icon" class="tool-icon" loading="lazy">
+                                    </div>
+                                    <span class="about__tool-name">Cinema 4D</span>
+                                </div>
+
+                                <div class="about__tool-item">
+                                    <div class="about__tool-icon">
+                                        <img src="assets/images/Pro Tools.png" alt="Pro Tools icon" class="tool-icon" loading="lazy">
+                                    </div>
+                                    <span class="about__tool-name">Pro Tools</span>
+                                </div>
+
+                                <div class="about__tool-item">
+                                    <div class="about__tool-icon">
+                                        <img src="assets/images/250px-Adobe_Photoshop_CC_icon.svg.png"
+                                            alt="Photoshop icon" class="tool-icon">
+                                    </div>
+                                    <span class="about__tool-name">Photoshop</span>
+                                </div>
+
+                                <div class="about__tool-item">
+                                    <div class="about__tool-icon">
+                                        <img src="assets/images/CapCut.png" alt="CapCut icon" class="tool-icon" loading="lazy">
+                                    </div>
+                                    <span class="about__tool-name">CapCut</span>
+                                </div>
+                            </div>
+                        </div> <!-- CTA Section -->
+                        <div class="about__cta">
+                            <h3 class="about__cta-title">Ready to Bring Your Vision to Life?</h3>
+                            <p class="about__cta-description">Let's collaborate on your next video project and create
+                                something amazing together.</p>
+                            <div class="about__cta-actions">
+                                <a href="#work" class="btn-primary">
+                                    <i class="fas fa-play"></i>
+                                    View My Work
+                                </a>
+                                <a href="#contact" class="btn-secondary">
+                                    <i class="fas fa-envelope"></i>
+                                    Let's Talk
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Demo Reel Section -->
+        <section class="work section" id="work">
+            <div class="work__container container">
+                <!-- Section Header -->
+                <div class="work__header">
+                    <h2 class="section__title work__title">My Work</h2>
+                    <p class="work__subtitle">Check out my latest video editing projects</p>
+                </div>
+
+                <!-- Featured Video Player -->
+                <div class="work__featured">
+                    <div class="work__video-container">
+                        <video class="work__video" poster="assets/videos/videothumbnail1.webp" playsinline
+                            preload="metadata">
+                            <source src="assets/videos/Backyard_4K_Living_Background.mp4" type="video/mp4">
+                            <source src="assets/videos/hero-background.webm" type="video/webm">
+                            Your browser doesn't support HTML5 video.
+                        </video>
+
+                        <!-- Custom Play Button Overlay -->
+                        <button class="work__play-button touch-target" aria-label="Play video">
+                            <i class="fas fa-play"></i>
+                        </button>
+
+                        <!-- Video Controls -->
+                        <div class="work__video-controls">
+                            <div class="work__progress">
+                                <div class="work__progress-bar"></div>
+                                <div class="work__progress-handle touch-target"></div>
+                            </div>
+
+                            <div class="work__controls-main">
+                                <button class="work__control-btn touch-target" aria-label="Play/Pause">
+                                    <i class="fas fa-play"></i>
+                                </button>
+
+                                <div class="work__volume-container">
+                                    <button class="work__control-btn touch-target" aria-label="Toggle mute">
+                                        <i class="fas fa-volume-up"></i>
+                                    </button>
+                                    <div class="work__volume-slider">
+                                        <div class="work__volume-progress"></div>
+                                        <div class="work__volume-handle touch-target"></div>
+                                    </div>
+                                </div>
+
+                                <span class="work__time">0:00 / 0:00</span>
+
+                                <button class="work__control-btn touch-target" aria-label="Toggle fullscreen">
+                                    <i class="fas fa-expand"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Loading Spinner -->
+                        <div class="work__loading">
+                            <div class="work__loading-spinner"></div>
+                        </div>
+                    </div>
+
+                    <!-- Video Description -->
+                    <div class="work__description">
+                        <h3 class="work__video-title">2024 Demo Reel</h3>
+                        <p class="work__video-text">A showcase of my best video editing work, featuring dynamic
+                            transitions, color grading, and motion graphics across various genres.</p>
+                    </div>
+                </div>
+
+                <!-- Categories (Scrollable) -->
+                <div class="work__categories">
+                    <div class="work__categories-scroll">
+                        <button class="work__category-btn touch-target active" data-category="all">
+                            All Work
+                        </button>
+                        <button class="work__category-btn touch-target" data-category="gaming">
+                            Gaming
+                        </button>
+                        <button class="work__category-btn touch-target" data-category="montages">
+                            Montages
+                        </button>
+                        <button class="work__category-btn touch-target" data-category="music">
+                            Music Videos
+                        </button>
+                        <button class="work__category-btn touch-target" data-category="commercial">
+                            Commercial
+                        </button>
+                    </div>
+                    <!-- Scroll Indicators -->
+                    <div class="work__categories-fade left"></div>
+                    <div class="work__categories-fade right"></div>
+                </div>
+
+                <!-- Projects Grid - 5 Featured Projects -->
+                <div class="work__projects">
+                    <!-- Gaming Project -->
+                    <div class="work__project" data-category="gaming">
+                        <div class="work__project-thumbnail">
+                            <video class="project-preview" muted loop preload="none"
+                                poster="assets/videos/videothumbnail1.webp">
+                                <source src="assets/videos/Backyard_4K_Living_Background.mp4" type="video/mp4">
+                            </video>
+                            <div class="work__project-overlay">
+                                <i class="fas fa-play"></i>
+                            </div>
+                        </div>
+                        <h4 class="work__project-title">Gaming Highlight Reel</h4>
+                        <p class="work__project-category">Gaming</p>
+                    </div>
+
+                    <!-- Montage Project -->
+                    <div class="work__project" data-category="montages">
+                        <div class="work__project-thumbnail">
+                            <video class="project-preview" muted loop preload="none"
+                                poster="assets/videos/videothumbnail1.webp">
+                                <source src="assets/videos/generate-video-hover.mp4" type="video/mp4">
+                            </video>
+                            <div class="work__project-overlay">
+                                <i class="fas fa-play"></i>
+                            </div>
+                        </div>
+                        <h4 class="work__project-title">Dynamic Transitions</h4>
+                        <p class="work__project-category">Montages</p>
+                    </div>
+
+                    <!-- Music Video Project -->
+                    <div class="work__project" data-category="music">
+                        <div class="work__project-thumbnail">
+                            <video class="project-preview" muted loop preload="none"
+                                poster="assets/videos/videothumbnail1.webp">
+                                <source src="assets/videos/magnific-upscaler-video.webm" type="video/webm">
+                            </video>
+                            <div class="work__project-overlay">
+                                <i class="fas fa-play"></i>
+                            </div>
+                        </div>
+                        <h4 class="work__project-title">Visual Music Experience</h4>
+                        <p class="work__project-category">Music</p>
+                    </div>
+
+                    <!-- Commercial Project -->
+                    <div class="work__project" data-category="commercial">
+                        <div class="work__project-thumbnail">
+                            <video class="project-preview" muted loop preload="none"
+                                poster="assets/videos/projectthumbnail1.webp">
+                                <source src="assets/videos/v3-home-video-with-logos.webm" type="video/webm">
+                            </video>
+                            <div class="work__project-overlay">
+                                <i class="fas fa-play"></i>
+                            </div>
+                        </div>
+                        <h4 class="work__project-title">Brand Story</h4>
+                        <p class="work__project-category">Commercial</p>
+                    </div>
+
+                    <!-- Featured Showcase -->
+                    <div class="work__project" data-category="montages">
+                        <div class="work__project-thumbnail">
+                            <video class="project-preview" muted loop preload="none"
+                                poster="assets/videos/videothumbnail1.webp">
+                                <source src="assets/videos/generate-video-hover.mp4" type="video/mp4">
+                            </video>
+                            <div class="work__project-overlay">
+                                <i class="fas fa-play"></i>
+                            </div>
+                        </div>
+                        <h4 class="work__project-title">Creative Showcase</h4>
+                        <p class="work__project-category">Montages</p>
+                    </div>
+
+                    <!-- 6th Project - Hidden by default -->
+                    <div class="work__project" data-category="gaming" style="display: none;">
+                        <div class="work__project-thumbnail">
+                            <video class="project-preview" muted loop preload="none"
+                                poster="assets/videos/projectthumbnail1.webp">
+                                <source src="assets/videos/v3-home-video-with-logos.webm" type="video/webm">
+                            </video>
+                            <div class="work__project-overlay">
+                                <i class="fas fa-play"></i>
+                            </div>
+                        </div>
+                        <h4 class="work__project-title">Epic Gaming Montage</h4>
+                        <p class="work__project-category">Gaming</p>
+                    </div>
+                </div>
+
+                <!-- Load More Button -->
+                <button class="work__load-more btn-secondary touch-target">
+                    <i class="fas fa-plus"></i>
+                    Load More Projects
+                </button>
+            </div>
+        </section>
+
+
+
+
+
+        <!-- Services Section -->
+        <section class="services section" id="services">
+            <div class="services__container container">
+                <!-- Section Header -->
+                <div class="services__header">
+                    <h2 class="section__title services__title">My Services</h2>
+                    <p class="services__subtitle">Professional video editing services tailored to your vision</p>
+                </div>
+
+                <!-- Services Grid -->
+                <div class="services__grid">
+                    <!-- Video Editing Service -->
+                    <div class="services__card touch-target">
+                        <div class="services__icon">
+                            <i class="fas fa-cut"></i>
+                        </div>
+                        <h3 class="services__card-title">Video Editing</h3>
+                        <p class="services__card-description">Professional video editing with seamless cuts, dynamic transitions, and compelling storytelling that brings your vision to life.</p>
+                        <ul class="services__features">
+                            <li><i class="fas fa-check"></i>Seamless cuts & transitions</li>
+                            <li><i class="fas fa-check"></i>Timeline optimization</li>
+                            <li><i class="fas fa-check"></i>Multi-format delivery</li>
+                            <li><i class="fas fa-check"></i>Fast turnaround</li>
+                        </ul>
+                        <div class="services__pricing">
+                            <span class="services__price">Starting at</span>
+                            <span class="services__amount">$50<span class="services__period">/hour</span></span>
+                        </div>
+                    </div>
+
+                    <!-- Color Grading Service -->
+                    <div class="services__card touch-target">
+                        <div class="services__icon">
+                            <i class="fas fa-palette"></i>
+                        </div>
+                        <h3 class="services__card-title">Color Grading</h3>
+                        <p class="services__card-description">Professional color correction and grading to enhance mood, atmosphere, and visual consistency across your entire project.</p>
+                        <ul class="services__features">
+                            <li><i class="fas fa-check"></i>Color correction</li>
+                            <li><i class="fas fa-check"></i>Cinematic grading</li>
+                            <li><i class="fas fa-check"></i>Mood enhancement</li>
+                            <li><i class="fas fa-check"></i>Brand consistency</li>
+                        </ul>
+                        <div class="services__pricing">
+                            <span class="services__price">Starting at</span>
+                            <span class="services__amount">$75<span class="services__period">/project</span></span>
+                        </div>
+                    </div>
+
+                    <!-- Motion Graphics Service -->
+                    <div class="services__card touch-target">
+                        <div class="services__icon">
+                            <i class="fas fa-magic"></i>
+                        </div>
+                        <h3 class="services__card-title">Motion Graphics</h3>
+                        <p class="services__card-description">Eye-catching animated graphics, titles, and visual effects that add professional polish and engaging visual elements.</p>
+                        <ul class="services__features">
+                            <li><i class="fas fa-check"></i>Animated titles & logos</li>
+                            <li><i class="fas fa-check"></i>Lower thirds & graphics</li>
+                            <li><i class="fas fa-check"></i>Visual effects</li>
+                            <li><i class="fas fa-check"></i>Custom animations</li>
+                        </ul>
+                        <div class="services__pricing">
+                            <span class="services__price">Starting at</span>
+                            <span class="services__amount">$100<span class="services__period">/element</span></span>
+                        </div>
+                    </div>
+
+                    <!-- Sound Design Service -->
+                    <div class="services__card touch-target">
+                        <div class="services__icon">
+                            <i class="fas fa-volume-up"></i>
+                        </div>
+                        <h3 class="services__card-title">Sound Design</h3>
+                        <p class="services__card-description">Professional audio editing, mixing, and sound design to create immersive audio experiences that complement your visuals.</p>
+                        <ul class="services__features">
+                            <li><i class="fas fa-check"></i>Audio mixing & mastering</li>
+                            <li><i class="fas fa-check"></i>Sound effects</li>
+                            <li><i class="fas fa-check"></i>Music synchronization</li>
+                            <li><i class="fas fa-check"></i>Voice enhancement</li>
+                        </ul>
+                        <div class="services__pricing">
+                            <span class="services__price">Starting at</span>
+                            <span class="services__amount">$60<span class="services__period">/project</span></span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Services CTA -->
+                <div class="services__cta">
+                    <h3 class="services__cta-title">Ready to Start Your Project?</h3>
+                    <p class="services__cta-description">Let's discuss your vision and create something amazing together. Get a custom quote for your project.</p>
+                    <div class="services__cta-actions">
+                        <a href="#contact" class="btn-primary btn-large">
+                            <i class="fas fa-envelope"></i>
+                            Get Quote
+                        </a>
+                        <a href="#work" class="btn-secondary">
+                            <i class="fas fa-play"></i>
+                            View Portfolio
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="contact section" id="contact">
+            <div class="contact__container container">
+                <!-- Contact Header -->
+                <div class="contact__header">
+                    <h2 class="section__title contact__title">Let's Collaborate</h2>
+                    <p class="contact__subtitle">Ready to bring your vision to life? Get in touch and let's create something amazing together.</p>
+                </div>
+
+                <!-- Contact Content -->
+                <div class="contact__content">
+                    <!-- Contact Form -->
+                    <div class="contact__form-wrapper">
+                        <form class="contact__form" id="contactForm" novalidate>
+                            <div class="contact__form-group">
+                                <label for="contactName" class="contact__label">
+                                    <i class="fas fa-user"></i>
+                                    Name *
+                                </label>
+                                <input 
+                                    type="text" 
+                                    id="contactName" 
+                                    name="name" 
+                                    class="contact__input touch-target" 
+                                    placeholder="Your full name"
+                                    required
+                                    autocomplete="name"
+                                >
+                                <span class="contact__error" id="nameError"></span>
+                            </div>
+
+                            <div class="contact__form-group">
+                                <label for="contactEmail" class="contact__label">
+                                    <i class="fas fa-envelope"></i>
+                                    Email *
+                                </label>
+                                <input 
+                                    type="email" 
+                                    id="contactEmail" 
+                                    name="email" 
+                                    class="contact__input touch-target" 
+                                    placeholder="your.email@example.com"
+                                    required
+                                    autocomplete="email"
+                                >
+                                <span class="contact__error" id="emailError"></span>
+                            </div>
+
+                            <div class="contact__form-group">
+                                <label for="contactSubject" class="contact__label">
+                                    <i class="fas fa-tag"></i>
+                                    Project Type
+                                </label>
+                                <select 
+                                    id="contactSubject" 
+                                    name="subject" 
+                                    class="contact__select touch-target"
+                                    autocomplete="off"
+                                >
+                                    <option value="">Select project type</option>
+                                    <option value="video-editing">Video Editing</option>
+                                    <option value="color-grading">Color Grading</option>
+                                    <option value="motion-graphics">Motion Graphics</option>
+                                    <option value="sound-design">Sound Design</option>
+                                    <option value="full-production">Full Production</option>
+                                    <option value="consultation">Consultation</option>
+                                    <option value="other">Other</option>
+                                </select>
+                                <i class="contact__select-arrow fas fa-chevron-down"></i>
+                            </div>
+
+                            <div class="contact__form-group">
+                                <label for="contactMessage" class="contact__label">
+                                    <i class="fas fa-comment"></i>
+                                    Message *
+                                </label>
+                                <textarea 
+                                    id="contactMessage" 
+                                    name="message" 
+                                    class="contact__textarea touch-target" 
+                                    placeholder="Tell me about your project, timeline, and budget..."
+                                    rows="5"
+                                    required
+                                ></textarea>
+                                <span class="contact__error" id="messageError"></span>
+                            </div>
+
+                            <div class="contact__form-actions">
+                                <button type="submit" class="btn-primary btn-large contact__submit touch-target">
+                                    <i class="fas fa-paper-plane"></i>
+                                    Send Message
+                                </button>
+                                <div class="contact__form-status" id="formStatus"></div>
+                            </div>
+                        </form>
+                    </div>
+
+                    <!-- Contact Info -->
+                    <div class="contact__info">
+                        <div class="contact__info-card">
+                            <div class="contact__info-header">
+                                <h3 class="contact__info-title">Get In Touch</h3>
+                                <p class="contact__info-description">Ready to start your project? I typically respond within 24 hours.</p>
+                            </div>
+
+                            <!-- Contact Methods -->
+                            <div class="contact__methods">
+                                <a href="mailto:hello@miraedits.com" class="contact__method touch-target">
+                                    <div class="contact__method-icon">
+                                        <i class="fas fa-envelope"></i>
+                                    </div>
+                                    <div class="contact__method-content">
+                                        <span class="contact__method-label">Email</span>
+                                        <span class="contact__method-value">hello@miraedits.com</span>
+                                    </div>
+                                </a>
+
+                                <a href="tel:+1234567890" class="contact__method touch-target">
+                                    <div class="contact__method-icon">
+                                        <i class="fas fa-phone"></i>
+                                    </div>
+                                    <div class="contact__method-content">
+                                        <span class="contact__method-label">Phone</span>
+                                        <span class="contact__method-value">+1 (234) 567-8900</span>
+                                    </div>
+                                </a>
+
+                                <div class="contact__method">
+                                    <div class="contact__method-icon">
+                                        <i class="fas fa-clock"></i>
+                                    </div>
+                                    <div class="contact__method-content">
+                                        <span class="contact__method-label">Response Time</span>
+                                        <span class="contact__method-value">Within 24 hours</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Social Links -->
+                            <div class="contact__social">
+                                <h4 class="contact__social-title">Follow My Work</h4>
+                                <div class="contact__social-links">
+                                    <a href="https://instagram.com/miraedits" target="_blank" rel="noopener noreferrer"
+                                        class="contact__social-link touch-target" aria-label="Follow MiraEdits on Instagram">
+                                        <i class="fab fa-instagram"></i>
+                                        <span>Instagram</span>
+                                    </a>
+                                    <a href="https://youtube.com/@miraedits" target="_blank" rel="noopener noreferrer"
+                                        class="contact__social-link touch-target" aria-label="Subscribe to MiraEdits on YouTube">
+                                        <i class="fab fa-youtube"></i>
+                                        <span>YouTube</span>
+                                    </a>
+                                    <a href="https://tiktok.com/@miraedits" target="_blank" rel="noopener noreferrer"
+                                        class="contact__social-link touch-target" aria-label="Follow MiraEdits on TikTok">
+                                        <i class="fab fa-tiktok"></i>
+                                        <span>TikTok</span>
+                                    </a>
+                                    <a href="https://linkedin.com/in/miraedits" target="_blank" rel="noopener noreferrer"
+                                        class="contact__social-link touch-target" aria-label="Connect with MiraEdits on LinkedIn">
+                                        <i class="fab fa-linkedin"></i>
+                                        <span>LinkedIn</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Mobile-Optimized Footer -->
+    <footer class="footer">
+        <div class="footer__container container">
+            <div class="footer__content">
+                <div class="footer__brand">
+                    <h3 class="footer__title brand-title">MiraEdits</h3>
+                    <p class="footer__subtitle brand-slogan">Cut. Edit. Wow.</p>
+                </div>
+
+                <div class="footer__social">
+                    <h4 class="footer__social-title">Follow Me</h4>
+                    <div class="footer__social-links">
+                        <a href="https://instagram.com/miraedits" target="_blank" rel="noopener noreferrer"
+                            class="footer__social-link touch-target" aria-label="Follow MiraEdits on Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://youtube.com/@miraedits" target="_blank" rel="noopener noreferrer"
+                            class="footer__social-link touch-target" aria-label="Subscribe to MiraEdits on YouTube">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                        <a href="https://tiktok.com/@miraedits" target="_blank" rel="noopener noreferrer"
+                            class="footer__social-link touch-target" aria-label="Follow MiraEdits on TikTok">
+                            <i class="fab fa-tiktok"></i>
+                        </a>
+                        <a href="https://linkedin.com/in/miraedits" target="_blank" rel="noopener noreferrer"
+                            class="footer__social-link touch-target" aria-label="Connect with MiraEdits on LinkedIn">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer__copy">
+                <p>&copy; 2024 MiraEdits. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+    <script src="js/video-modal.js"></script>
+
+</body>
+
+</html>

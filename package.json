@@ -1,0 +1,48 @@
+{
+  "name": "miraedits-portfolio",
+  "version": "1.0.0",
+  "description": "Mobile-first video editing portfolio website with performance optimizations",
+  "main": "index.html",
+  "scripts": {
+    "build": "node build/minify.js",
+    "build:dev": "node build/minify.js --dev",
+    "clean": "rimraf dist",
+    "prebuild": "npm run clean",
+    "serve": "npx http-server . -p 3000 -o",
+    "serve:prod": "npx http-server dist -p 3001 -o",
+    "analyze": "node build/analyze.js",
+    "test:performance": "lighthouse http://localhost:3000 --output=json --output-path=./performance-report.json"
+  },
+  "devDependencies": {
+    "clean-css": "^5.3.2",
+    "uglify-js": "^3.17.4",
+    "rimraf": "^5.0.5",
+    "http-server": "^14.1.1",
+    "lighthouse": "^11.4.0"
+  },
+  "keywords": [
+    "portfolio",
+    "video-editing",
+    "mobile-first",
+    "responsive",
+    "performance",
+    "web-development"
+  ],
+  "author": "MiraEdits",
+  "license": "MIT",
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead",
+    "not IE 11"
+  ],
+  "engines": {
+    "node": ">=14.0.0",
+    "npm": ">=6.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/miraedits/portfolio"
+  },
+  "homepage": "https://miraedits.github.io/portfolio"
+}

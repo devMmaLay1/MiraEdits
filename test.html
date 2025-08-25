@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MiraEdits Navigation Test</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .test-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: var(--spacing-xl);
+        }
+
+        .test-button {
+            background: var(--primary-pink);
+            color: var(--bg-primary);
+            border: none;
+            padding: 15px 30px;
+            border-radius: 8px;
+            cursor: pointer;
+            margin: 10px;
+            font-size: 16px;
+            transition: all 0.3s ease;
+        }
+
+        .test-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(255, 105, 180, 0.3);
+        }
+
+        .status {
+            background: var(--bg-secondary);
+            color: var(--text-primary);
+            padding: 15px;
+            border-radius: 8px;
+            margin: 20px 0;
+            border: 1px solid var(--border-color);
+        }
+
+        .theme-demo {
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            padding: var(--spacing-lg);
+            border-radius: 12px;
+            margin: var(--spacing-lg) 0;
+            border: 2px solid var(--primary-pink);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Dark Mode Toggle Button -->
+    <button class="theme-toggle touch-target" id="theme-toggle" aria-label="Toggle dark mode">
+        <i class="fas fa-moon" id="theme-icon"></i>
+    </button>
+
+    <div class="test-container">
+        <h1 class="brand-title">🔧 MiraEdits Navigation & Dark Mode Test</h1>
+
+        <div class="theme-demo">
+            <h2>🌙 Dark Mode Demo</h2>
+            <p>This section demonstrates the dark mode CSS variables working across all elements:</p>
+            <ul>
+                <li><strong>Background:</strong> var(--bg-primary)</li>
+                <li><strong>Text:</strong> var(--text-primary)</li>
+                <li><strong>Pink Brand:</strong> var(--primary-pink)</li>
+                <li><strong>Borders:</strong> var(--border-color)</li>
+            </ul>
+            <button class="btn-primary" onclick="toggleThemeTest()">
+                <i class="fas fa-palette"></i> Toggle Theme Test
+            </button>
+        </div>
+
+        <div class="status">
+            <h3>Navigation Elements Check:</h3>
+            <p id="nav-status">Checking...</p>
+        </div>
+
+        <div class="status">
+            <h3>Dark Mode System Check:</h3>
+            <p id="theme-status">Checking...</p>
+        </div>
+
+        <button class="test-button" onclick="testNavigation()">
+            <i class="fas fa-bars"></i> Test Navigation Functions
+        </button>
+        <button class="test-button" onclick="testDarkMode()">
+            <i class="fas fa-moon"></i> Test Dark Mode System
+        </button>
+        <button class="test-button" onclick="window.open('index.html', '_blank')">
+            <i class="fas fa-external-link-alt"></i> Open Main Site
+        </button>
+
+        <div id="test-results"></div>
+    </div>
+
+    <!-- Include main JavaScript for dark mode functionality -->
+    <script src="js/main.js"></script>
+
+    <script>
+        function testNavigation() {
+            const results = document.getElementById('test-results');
+            results.innerHTML = '<h3>Navigation Test Results:</h3>';
+
+            // Test if main page elements exist
+            fetch('index.html')
+                .then(response => response.text())
+                .then(html => {
+                    const hasNavToggle = html.includes('id="nav-toggle"');
+                    const hasNavMenu = html.includes('id="nav-menu"');
+                    const hasNavClose = html.includes('id="nav-close"');
+                    const hasFontAwesome = html.includes('font-awesome');
+                    const hasThemeToggle = html.includes('id="theme-toggle"');
+
+                    results.innerHTML += `
+                        <div style="background: var(--bg-secondary); padding: 15px; border-radius: 8px; margin: 10px 0;">
+                            <p>✅ Nav Toggle Button: ${hasNavToggle ? '🟢 Found' : '🔴 Missing'}</p>
+                            <p>✅ Nav Menu: ${hasNavMenu ? '🟢 Found' : '🔴 Missing'}</p>
+                            <p>✅ Nav Close Button: ${hasNavClose ? '🟢 Found' : '🔴 Missing'}</p>
+                            <p>✅ Font Awesome Icons: ${hasFontAwesome ? '🟢 Loaded' : '🔴 Missing'}</p>
+                            <p>✅ Dark Mode Toggle: ${hasThemeToggle ? '🟢 Found' : '🔴 Missing'}</p>
+                            <p><strong>Navigation Status: ${hasNavToggle && hasNavMenu && hasNavClose && hasFontAwesome ? '🟢 All Systems Go!' : '🔴 Issues Found'}</strong></p>
+                        </div>
+                    `;
+                })
+                .catch(err => {
+                    results.innerHTML += '<p>🔴 Error loading main page</p>';
+                });
+        }
+
+        function testDarkMode() {
+            const results = document.getElementById('test-results');
+            const themeStatus = document.getElementById('theme-status');
+
+            results.innerHTML += '<h3>Dark Mode Test Results:</h3>';
+
+            // Test CSS variables
+            const computedStyle = getComputedStyle(document.documentElement);
+            const bgPrimary = computedStyle.getPropertyValue('--bg-primary').trim();
+            const textPrimary = computedStyle.getPropertyValue('--text-primary').trim();
+            const primaryPink = computedStyle.getPropertyValue('--primary-pink').trim();
+
+            // Test current theme
+            const currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
+            const hasLocalStorage = typeof (Storage) !== "undefined";
+            const savedTheme = hasLocalStorage ? localStorage.getItem('theme') : null;
+
+            // Test MiraEdits object
+            const hasMiraEdits = typeof window.MiraEdits !== 'undefined';
+            const hasThemeUtils = hasMiraEdits && window.MiraEdits.theme;
+
+            results.innerHTML += `
+                <div style="background: var(--bg-secondary); padding: 15px; border-radius: 8px; margin: 10px 0;">
+                    <h4>🎨 CSS Variables Test:</h4>
+                    <p>✅ --bg-primary: ${bgPrimary ? '🟢 ' + bgPrimary : '🔴 Missing'}</p>
+                    <p>✅ --text-primary: ${textPrimary ? '🟢 ' + textPrimary : '🔴 Missing'}</p>
+                    <p>✅ --primary-pink: ${primaryPink ? '🟢 ' + primaryPink : '🔴 Missing'}</p>
+                    
+                    <h4>🌙 Theme System Test:</h4>
+                    <p>✅ Current Theme: ${currentTheme ? '🟢 ' + currentTheme : '🔴 Not Set'}</p>
+                    <p>✅ Local Storage: ${hasLocalStorage ? '🟢 Available' : '🔴 Not Available'}</p>
+                    <p>✅ Saved Theme: ${savedTheme ? '🟢 ' + savedTheme : '🟡 None Saved'}</p>
+                    
+                    <h4>🔧 JavaScript API Test:</h4>
+                    <p>✅ MiraEdits Object: ${hasMiraEdits ? '🟢 Available' : '🔴 Missing'}</p>
+                    <p>✅ Theme Utilities: ${hasThemeUtils ? '🟢 Available' : '🔴 Missing'}</p>
+                    
+                    <p><strong>Dark Mode Status: ${bgPrimary && textPrimary && currentTheme && hasMiraEdits ? '🟢 Fully Functional!' : '🔴 Issues Found'}</strong></p>
+                </div>
+            `;
+
+            themeStatus.innerHTML = `🟢 Dark mode system is ${hasMiraEdits && hasThemeUtils ? 'fully operational' : 'having issues'}`;
+        }
+
+        function toggleThemeTest() {
+            if (typeof window.MiraEdits !== 'undefined' && window.MiraEdits.theme) {
+                window.MiraEdits.theme.toggle();
+
+                // Show feedback
+                const demo = document.querySelector('.theme-demo');
+                demo.style.transform = 'scale(0.98)';
+                setTimeout(() => {
+                    demo.style.transform = '';
+                }, 200);
+
+                // Update test results
+                setTimeout(() => {
+                    testDarkMode();
+                }, 300);
+            } else {
+                alert('Dark mode system not available!');
+            }
+        }
+
+        // Auto-run tests on load
+        document.addEventListener('DOMContentLoaded', function () {
+            document.getElementById('nav-status').innerHTML = '🟢 Test page loaded successfully';
+
+            // Wait a bit for everything to initialize
+            setTimeout(() => {
+                testNavigation();
+                testDarkMode();
+            }, 500);
+        });
+
+        // Listen for theme changes
+        window.addEventListener('themeChanged', function (e) {
+            console.log('Theme changed to:', e.detail.theme);
+            document.getElementById('theme-status').innerHTML = `🟢 Theme switched to ${e.detail.theme} mode`;
+        });
+    </script>
+</body>
+
+</html>
